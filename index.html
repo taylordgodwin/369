@@ -162,7 +162,7 @@
 
 				<!-- Footer -->
 					<footer id="footer">
-						<section>
+						<section id="form">
 							<form method="post" action="#">
 								<div class="fields">
 									<div class="field">
@@ -179,7 +179,7 @@
 									</div>
 								</div>
 								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
+									<li><button onclick="runHandle()" class="button submit">Send Message</button></li>
 								</ul>
 							</form>
 						</section>
@@ -224,6 +224,16 @@
 			<script src="js/breakpoints.min.js"></script>
 			<script src="js/util.js"></script>
 			<script src="js/main.js"></script>
+		<script>
+    function runHandle(){
+      var name = document.getElementById("name");
+      var email = document.getElementById("email");
+      var message = document.getElementById("message");
+      document.getElementById("form").innerHTML='Hi, '+name.value + '. Your message is: '+ message.value + '. Please finish sending the email. Thank you. I will get back to you in 24 hours. ';
+      window.location.href = "mailto:taylordgodwin88@gmail.com?subject=Message from "+name.value+"&body="+message.value;
+    
+}
+		</script>
 
 	</body>
 </html>
